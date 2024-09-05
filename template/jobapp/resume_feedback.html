@@ -1,0 +1,16 @@
+<!-- resume_feedback.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Resume Feedback</h2>
+  <form method="post" enctype="multipart/form-data" action="https://www.resumego.net/resume-checker/">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Upload</button>
+  </form>
+  {% if feedback %}
+    <h3>Feedback:</h3>
+    <p>{{ feedback }}</p>
+  {% endif %}
+{% endblock %}

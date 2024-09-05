@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Negotiation Tips</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://cdn.pixabay.com/photo/2019/06/23/14/47/handshake-4293861_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s;
+        }
+       .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+       .content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        h1.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ul {
+            list-style-type: none;
+            margin-left: 20px;
+            text-align: left;
+            padding: 20px;
+        }
+        li {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        li.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="hidden">Salary Negotiation Tips</h1>
+        <ul>
+            <li class="hidden">Research typical salaries for your position.</li>
+            <li class="hidden">Highlight your skills and accomplishments.</li>
+            <li class="hidden">Practice your negotiation skills.</li>
+            <li class="hidden">Be confident and respectful.</li>
+            <li class="hidden">Consider non-salary benefits (e.g., health benefits, work-life balance).</li>
+        </ul>
+    </div>
+    <script>
+        let content = document.querySelector('.content');
+        let h1 = document.querySelector('h1');
+        let lis = document.querySelectorAll('li');
+        
+        setTimeout(() => {
+            content.classList.add('visible');
+        }, 500);
+        
+        setTimeout(() => {
+            h1.classList.add('visible');
+        }, 1000);
+        
+        let delay = 1500;
+        lis.forEach((li, index) => {
+            setTimeout(() => {
+                li.classList.add('visible');
+            }, delay + (index * 500));
+        });
+    </script>
+</body>
+</html>

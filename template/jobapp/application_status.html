@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Application Status</h2>
+  <ul>
+    {% for application in applications %}
+      <li>
+        {{ application.job.title }} - {{ application.get_status_display }}
+        (Applied on {{ application.timestamp }})
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
